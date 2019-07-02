@@ -1,0 +1,353 @@
+@import 'global/variables.scss';
+
+.price {
+  background-color: $lightgrey;
+  position: relative;
+  background-image: url('../img/bg-triangle-white.svg');
+  background-repeat: no-repeat;
+  background-size: 120%;
+  background-position: 0 0;
+}
+
+.price-tables__wrapper {
+  overflow: hidden;
+  width: 100%;
+  padding: 75px 20px 98px 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.price-table__header {
+  background-color: $darkblue;
+
+  &--mobile {
+    display: none;
+  }
+}
+
+.price-table__item {
+
+  &--mobile {
+    display: none;
+  }
+}
+
+.price-table {
+  width: 300%;
+  margin-left: -100%;
+  border-collapse: collapse;
+
+  th {
+    border-bottom: none;
+  }
+
+  td {
+    background-color: $white;
+    border: 2px solid #e5e5e5;
+    padding-left: 22px;
+    height: 56px;
+    background-clip: padding-box;
+    vertical-align: middle;
+  }
+}
+
+.price-table__header {
+  border: 2px solid $lightgrey;
+
+  &--flag-hit {
+    position: relative;
+  }
+
+  &--flag-hit::before {
+    content: '';
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 90%;
+    background-image: url('../img/bg-hit-tablet.svg');
+    background-size: 72px 72px;
+    background-repeat: no-repeat;
+  }
+
+  &--flag-hit::after {
+    @include font(14px, 400, 30px);
+    color: $white;
+    content: 'ХИТ';
+    position: absolute;
+    z-index: 11;
+    top: 10px;
+    left: 10px;
+    transform: rotate(-45deg);
+  }
+}
+
+.price-table__title {
+  @include font(18px, 700, 30px);
+  color: $white;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+.price-table__amount {
+  @include font(24px, 300, 30px);
+  color: $white;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.price-table__item {
+  @include font(14px, 400, 30px);
+  padding: 10px, 20px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.price__control-btn {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: #b5b9be;
+  border-radius: 50%;
+  border: 2px solid $lightgrey;
+  cursor: pointer;
+}
+
+
+#price-1:checked ~ .price__controls .price__control-btn[for='price-1'],
+#price-2:checked ~ .price__controls .price__control-btn[for='price-2'],
+#price-3:checked ~ .price__controls .price__control-btn[for='price-3'] {
+  background-color: $lightgrey;
+  border: 2px solid $darkblue;
+}
+
+.price__controls {
+  position: absolute;
+  z-index: 10;
+  bottom: 50px;
+  left: 50%;
+  margin-left: -30px;
+  min-width: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.price-table__check {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0;
+  position: absolute;
+  right: 0;
+  margin-right: 17px;
+
+  &--no {
+    width: 27px;
+    height: 27px;
+    background-image: url('../img/icon-no.svg');
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: cover;
+  }
+
+  &--yes {
+    width: 31px;
+    height: 22px;
+    background-image: url('../img/icon-yes.svg');
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: cover;
+  }
+}
+
+.price__toggle {
+  opacity: 0;
+}
+
+
+@media (min-width: 660px) {
+
+  .price {
+    background-position: 0 -15px;
+  }
+
+  .price-tables {
+    @include wrapper();
+    padding: 0 0;
+  }
+
+  .price-tables__wrapper {
+    overflow: hidden;
+    width: 100%;
+    padding: 60px 20px 65px 20px;
+    box-sizing: border-box;
+    margin-bottom: 41px;
+  }
+
+  .price-table {
+    width: 100%;
+    margin-left: 0;
+
+    th,
+    td {
+      width: 25%;
+      display: table-cell;
+      padding: 0;
+    }
+
+    td {
+      height: 46px;
+      padding-left: 15px;
+    }
+  }
+
+  .price-table__title {
+    @include font(16px, 700, 30px);
+    margin-top: 15px;
+    margin-bottom: 0;
+  }
+
+  .price-table__amount {
+    @include font(18px, 300, 30px);
+    margin-top: -5px;
+    margin-bottom: 8px;
+  }
+
+  .price-table__item {
+
+    &--mobile {
+      @include font(14px, 400, 14px);
+      text-transform: capitalize;
+      display: block;
+    }
+
+    &--table {
+      font-size: 0;
+    }
+  }
+
+   .price-table__check {
+    display: inline-block;
+    font-size: 0;
+
+    &--no {
+      left: 50%;
+      margin-left: -13px;
+    }
+
+    &--yes {
+      left: 50%;
+      margin-left: -15px;
+    }
+  }
+
+  .price-table__header {
+
+    &--mobile {
+      display: block;
+      background-color: transparent;
+      border-color: transparent;
+    }
+  }
+
+  .price-table__header {
+
+    &--flag-hit::before {
+      content: '';
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      left: 0;
+      width: 61px;
+      height: 61px;
+      background-image: url('../img/bg-hit-tablet.svg');
+      background-size: 61px 61px;
+      background-repeat: no-repeat;
+    }
+
+    &--flag-hit::after {
+      @include font(14px, 400, 30px);
+      color: $white;
+      content: 'ХИТ';
+      position: absolute;
+      z-index: 11;
+      top: 6px;
+      left: 6px;
+      transform: rotate(-45deg);
+    }
+  }
+
+  .price__controls {
+    display: none;
+  }
+}
+
+@media (min-width: 960px) {
+
+  .price {
+    padding-top: 0;
+  }
+
+  .price-tables {
+    @include wrapper();
+    padding: 0 0;
+    margin-bottom: 65px;
+  }
+
+  .price-tables__wrapper {
+    overflow: hidden;
+    width: 100%;
+    padding: 130px 10px 94px 10px;
+    box-sizing: border-box;
+    margin-bottom: 0;
+  }
+
+  .price-table__title {
+    @include font(18px, 700, 30px);
+    margin-top: 15px;
+    margin-bottom: 0;
+  }
+
+  .price-table__amount {
+    @include font(24px, 300, 30px);
+    margin-top: 0;
+    margin-bottom: 25px;
+  }
+
+  .price-table__item {
+
+    p {
+      @include font(18px, 400, 22px);
+      padding-left: 6px;
+    }
+  }
+
+  .price-table__header {
+
+    &--flag-hit::before {
+      content: '';
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      left: 0;
+      width: 71px;
+      height: 71px;
+      background-image: url('../img/bg-hit-tablet.svg');
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+
+    &--flag-hit::after {
+      @include font(14px, 400, 30px);
+      color: $white;
+      content: 'ХИТ';
+      position: absolute;
+      z-index: 11;
+      top: 10px;
+      left: 10px;
+      transform: rotate(-45deg);
+    }
+  }
+}

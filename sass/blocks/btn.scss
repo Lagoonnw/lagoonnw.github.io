@@ -1,0 +1,176 @@
+@import 'global/variables.scss';
+
+.btn {
+  @include font(18px, 700, 18px);
+  @include padding-tb(17px, 17px);
+  display: block;
+  border-radius: 30px;
+  border: 4px solid $pink;
+  color: $pink;
+  text-align: center;
+  transition: all 0.3s;
+  text-decoration: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  margin: 0 auto;
+  width: 100%;
+
+  &:hover {
+    background-color: $pink;
+    color: $white;
+  }
+
+  &:active {
+    color: #e08195;
+  }
+
+  &--index {
+    @include font(18px, 700, 18px);
+    padding: 15px 0 15px;
+    border: 3px solid $white;
+    color: $white;
+    background-color: none;
+    width: 100%;
+    margin-bottom: 14px;
+    box-sizing: border-box;
+  }
+
+  &--index:hover {
+      color: $pink;
+      background-color: $white;
+  }
+
+  &--index:active {
+      color: #f2ced5;
+  }
+
+  &--form-btn {
+    @include font(18px, 700, 30px);
+    @include padding-tb(12px, 12px);
+    border: 4px solid #2aab6d;
+    color: $white;
+    border-radius: 5px;
+    text-transform: uppercase;
+    width: 280px;
+    background-color: #2aab6d;
+  }
+
+  &--form-btn:hover {
+    border: 4px solid #1c9b5e;
+    background-color: #1c9b5e;
+  }
+
+  &--form-btn:active {
+    color: #7dbd99;
+  }
+
+  &--cancel {
+    border: 4px solid #dddfe0;
+    color: #dddfe0;
+    background-color: transparent;
+    width: 100%;
+    margin-top: 10px;
+    padding: 15px 0;
+  }
+
+  &--cancel:hover {
+    border: 4px solid #b5b9be;
+    color: #b5b9be;
+    background-color: transparent;
+  }
+
+  &--cancel:active {
+    background-color: #b5b9be;
+    color: $white;
+  }
+
+  &--post {
+    padding: 15px 0;
+  }
+}
+
+@media (min-width: 660px) {
+  .btn {
+
+    &--index {
+      width: 300px;
+    }
+
+    &--form-btn {
+      @include font(18px, 700, 18px);
+      @include padding-tb(18px, 18px);
+      border: 4px solid #2aab6d;
+      color: $white;
+      border-radius: 5px;
+      text-transform: uppercase;
+      width: 300px;
+      margin-left: 0;
+    }
+
+    &--cancel {
+      border: 4px solid #dddfe0;
+      color: #dddfe0;
+      background-color: transparent;
+      width: 260px;
+      margin-top: 22px;
+      margin-left: 0;
+      padding: 15px 0;
+    }
+
+    &--post {
+      width: 260px;
+      margin-left: 0;
+    }
+  }
+}
+
+@media (min-width: 960px) {
+  .btn {
+    width: 182px;
+    margin-left: 0;
+    border: 3px solid $pink;
+    padding: 16px 0;
+
+    &--index {
+      @include font(21px, 700, 21px);
+      width: 300px;
+      border-color: $white;
+    }
+
+    &--cancel {
+      border: 3px solid #dddfe0;
+      color: #dddfe0;
+      background-color: transparent;
+      width: 182px;
+      margin-top: 0;
+      margin-right: 0;
+      padding: 16px 0;
+    }
+
+    &--cancel:hover {
+      border: 3px solid #b5b9be;
+      color: #b5b9be;
+      background-color: transparent;
+    }
+
+    &--form-btn {
+      @include font(18px, 700, 30px);
+      @include padding-tb(12px, 12px);
+      border: 4px solid #2aab6d;
+      color: $white;
+      border-radius: 5px;
+      text-transform: uppercase;
+      width: 300px;
+    }
+
+    &--form-btn:hover {
+      border: 4px solid #1c9b5e;
+      background-color: #1c9b5e;
+    }
+
+    &--modal {
+      width: 100%;
+    }
+  }
+}

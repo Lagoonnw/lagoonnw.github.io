@@ -1,0 +1,49 @@
+@import 'variables.scss';
+
+@mixin font ($size: 0.875em, $weight: 400, $line: 1.500em) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line;
+}
+
+@mixin padding-tb ($top, $bottom) {
+  padding-top: $top;
+  padding-bottom: $bottom;
+}
+
+@mixin padding-rl ($right, $left) {
+  padding-right: $right;
+  padding-left: $left;
+}
+
+@mixin clearfix() {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin wrapper() {
+  min-width: 320px;
+  margin: 0 auto;
+
+  @media (min-width: 660px) {
+    width: 660px;
+  }
+
+  @media (min-width: 960px) {
+    width: 960px;
+  }
+}
+
+@mixin wrapper-fluid() {
+  width: auto;
+
+  @media (min-width: 660px) {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    background-size: auto, cover;
+  }
+}
